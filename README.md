@@ -8,6 +8,7 @@ Abre tu terminal, asegúrate de estar ubicado en la raíz del proyecto (donde es
 
 bash
 python -m venv venv
+
 2. Activar el entorno virtual
 
 Si usas Windows:
@@ -20,18 +21,22 @@ source venv/bin/activate
 
 bash
 pip install -r requirements.txt
+
 4. Entrar a la carpeta del proyecto
 
 bash
 cd arandaCalzado
+
 5. Preparar la base de datos local
 
 bash
 python manage.py migrate
+
 6. Cargar los datos iniciales (Usuario Admin y Materiales base)
 
 bash
 python seed.py
+
 7. Levantar el servidor
 
 bash
