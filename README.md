@@ -17,6 +17,7 @@ venv\Scripts\activate
 Si usas Mac / Linux:
 bash
 source venv/bin/activate
+
 3. Instalar las dependencias del proyecto
 
 bash
