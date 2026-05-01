@@ -1,10 +1,9 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import MaterialViewSet, ProductViewSet
+from .views import PedidoViewSet
 
 router = DefaultRouter()
-router.register(r'materiales', MaterialViewSet)
-router.register(r'productos', ProductViewSet)
+router.register(r'', PedidoViewSet, basename='pedido')
 
 urlpatterns = [
     path('', include(router.urls)),

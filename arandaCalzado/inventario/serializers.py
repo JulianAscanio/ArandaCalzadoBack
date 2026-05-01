@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Material
+from .models import Material, Product
 
 class MaterialSerializer(serializers.ModelSerializer):
     minStock = serializers.FloatField(source='min_stock')
@@ -9,3 +9,9 @@ class MaterialSerializer(serializers.ModelSerializer):
     class Meta:
         model = Material
         fields = ['id', 'name', 'category', 'stock', 'minStock', 'maxStock', 'unit', 'lastEntry']
+
+class ProductSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Product
+        fields = '__all__'
+        depth = 1
