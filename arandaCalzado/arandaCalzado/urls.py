@@ -15,5 +15,6 @@ urlpatterns = [
     # Apps del Proyecto
     path('api/inventario/', include('inventario.urls')),
     path('api/pedidos/', include('pedido.urls')),    
+    path('api/produccion/', include('pedido.urls_produccion')),
     path('api/usuarios/', include('usuarios.urls')),
 ]

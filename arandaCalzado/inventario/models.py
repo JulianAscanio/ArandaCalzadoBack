@@ -14,14 +14,15 @@ class Material(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=255)
+    reference = models.CharField(max_length=100, default="")
+    heel_height = models.CharField(max_length=50, default="")
+    description = models.TextField(blank=True, default="")
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    size = models.IntegerField()
-    # Relación con Material
-    material = models.ForeignKey(Material, on_delete=models.SET_NULL, null=True, related_name='products')
+    material = models.ForeignKey(Material, on_delete=models.SET_NULL, null=True, blank=True, related_name='products')
     available_stock = models.PositiveIntegerField(default=0)
 
     def __str__(self):
-        return f"{self.name} (Size: {self.size})"
+        return f"{self.name} ({self.reference})"
 
 class Movement(models.Model):
     MOVEMENT_TYPES = (

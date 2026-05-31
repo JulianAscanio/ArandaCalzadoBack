@@ -22,10 +22,16 @@ class MaterialSerializer(serializers.ModelSerializer):
         return super().update(instance, validated_data)
 
 class ProductSerializer(serializers.ModelSerializer):
+    material_detail = MaterialSerializer(source='material', read_only=True)
+    material = serializers.PrimaryKeyRelatedField(
+        queryset=Material.objects.all(),
+        required=False,
+        allow_null=True
+    )
+
     class Meta:
         model = Product
-        fields = '__all__'
-        depth = 1
+        fields = ['id', 'name', 'reference', 'heel_height', 'description', 'price', 'material', 'material_detail', 'available_stock']
 
 class MovementSerializer(serializers.ModelSerializer):
     date = serializers.DateTimeField(format="%d de %b de %Y, %I:%M %p", read_only=True)

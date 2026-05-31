@@ -14,7 +14,7 @@ class OrderItemSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = OrderItem
-        fields = ['id', 'product', 'product_detail', 'quantity', 'unit_price']
+        fields = ['id', 'product', 'product_detail', 'quantity', 'unit_price', 'size']
 
 class PedidoSerializer(serializers.ModelSerializer):
     # Esto permite VER los detalles del cliente en un GET
@@ -59,3 +59,30 @@ class PedidoSerializer(serializers.ModelSerializer):
             for item_data in items_data:
                 OrderItem.objects.create(order=instance, **item_data)
         return instance
+
+class ProductionOrderItemSerializer(serializers.ModelSerializer):
+    product_name = serializers.CharField(source='product.name', read_only=True)
+    
+    class Meta:
+        model = OrderItem
+        fields = ['quantity', 'product_name', 'size']
+
+class ProductionOrderSerializer(serializers.ModelSerializer):
+    customer_name = serializers.SerializerMethodField()
+    status = serializers.SerializerMethodField()
+    items = ProductionOrderItemSerializer(many=True, read_only=True)
+    
+    class Meta:
+        model = Order
+        fields = ['id', 'customer_name', 'status', 'items', 'operario', 'fecha_inicio', 'observaciones_produccion']
+
+    def get_customer_name(self, obj):
+        return f"{obj.customer.user.first_name} {obj.customer.user.last_name}".strip() or obj.customer.user.username
+
+    def get_status(self, obj):
+        mapping = {
+            'pending': 'Pendiente',
+            'in_production': 'En producción',
+            'finished': 'Finalizado',
+        }
+        return mapping.get(obj.status, obj.status)

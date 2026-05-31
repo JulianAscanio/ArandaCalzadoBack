@@ -9,6 +9,6 @@ class MaterialAdmin(admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('name', 'price', 'size', 'available_stock', 'material')
-    list_filter = ('size', 'material')
-    search_fields = ('name',)
+    list_display = ('name', 'reference', 'heel_height', 'price', 'available_stock', 'material')
+    list_filter = ('heel_height', 'material')
+    search_fields = ('name', 'reference')
