@@ -31,7 +31,7 @@ class ProductSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Product
-        fields = ['id', 'name', 'reference', 'heel_height', 'description', 'price', 'material', 'material_detail', 'available_stock']
+        fields = ['id', 'name', 'reference', 'heel_height', 'description', 'price', 'material', 'material_detail', 'available_stock', 'image']
 
 class MovementSerializer(serializers.ModelSerializer):
     date = serializers.DateTimeField(format="%d de %b de %Y, %I:%M %p", read_only=True)
@@ -40,4 +40,4 @@ class MovementSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Movement
-        fields = ['id', 'material', 'materialName', 'movementType', 'quantity', 'reason', 'date']
+        fields = ['id', 'material', 'materialName', 'movementType', 'quantity', 'reason', 'date']

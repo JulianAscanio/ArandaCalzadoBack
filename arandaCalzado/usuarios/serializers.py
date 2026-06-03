@@ -1,22 +1,16 @@
-from django.contrib.auth.models import User
 from rest_framework import serializers
 from .models import Customer
 
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = ['username', 'password', 'email', 'first_name', 'last_name']
-        extra_kwargs = {'password': {'write_only': True}}
-
 class CustomerSerializer(serializers.ModelSerializer):
-    user = UserSerializer() # Quitamos el read_only=True para que acepte datos
+    orders_count = serializers.SerializerMethodField()
+    total_purchased = serializers.SerializerMethodField()
 
     class Meta:
         model = Customer
-        fields = ['id', 'user', 'phone', 'address', 'city']
+        fields = ['id', 'full_name', 'phone', 'address', 'city', 'email', 'orders_count', 'total_purchased']
 
-    def create(self, validated_data):
-        user_data = validated_data.pop('user')
-        user = User.objects.create_user(**user_data)
-        customer = Customer.objects.create(user=user, **validated_data)
-        return customer
+    def get_orders_count(self, obj):
+        return getattr(obj, 'annotated_orders_count', 0)
+
+    def get_total_purchased(self, obj):
+        return getattr(obj, 'annotated_total_purchased', 0) or 0

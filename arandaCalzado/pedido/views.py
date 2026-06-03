@@ -22,6 +22,27 @@ class ProductionViewSet(viewsets.ModelViewSet):
         # For other actions (like retrieve, custom detail actions), allow locating any order
         return Order.objects.all()
 
+    def create(self, request, *args, **kwargs):
+        # Interceptamos POST a /api/produccion/ para evitar el error 500
+        # Si el frontend envía el ID del pedido en el body, lo procesamos.
+        order_id = request.data.get('id') or request.data.get('order_id') or request.data.get('pedido_id')
+        
+        if order_id:
+            try:
+                order = Order.objects.get(id=order_id)
+                order.operario = request.data.get('operario', order.operario)
+                order.fecha_inicio = request.data.get('fecha_inicio', date.today())
+                order.status = 'pending'
+                order.save()
+                return Response({"status": "order launched for production", "id": order.id}, status=status.HTTP_200_OK)
+            except Order.DoesNotExist:
+                return Response({"error": f"No se encontró el pedido con ID {order_id}"}, status=status.HTTP_404_NOT_FOUND)
+                
+        return Response(
+            {"error": "Falta el ID del pedido. Asegúrate de enviar el 'id' del pedido en el formulario."},
+            status=status.HTTP_400_BAD_REQUEST
+        )
+
     # Custom action to list pending sales orders that can be launched
     @action(detail=False, methods=['get'])
     def pedidos_pendientes(self, request):

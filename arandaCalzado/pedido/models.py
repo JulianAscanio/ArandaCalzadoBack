@@ -25,7 +25,8 @@ class Order(models.Model):
     observaciones_produccion = models.TextField(blank=True, null=True)
 
     def __str__(self):
-        return f"Order {self.id} - {self.customer.user.username}"
+        customer_name = self.customer.user.username if self.customer.user else self.customer.full_name
+        return f"Order {self.id} - {customer_name}"
 
 class OrderItem(models.Model):
     """

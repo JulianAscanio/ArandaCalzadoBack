@@ -23,7 +23,8 @@ class PedidoSerializer(serializers.ModelSerializer):
     # Esto permite ENVIAR el ID del cliente en un POST
     customer = serializers.PrimaryKeyRelatedField(
         queryset=Customer.objects.all(), 
-        write_only=True
+        write_only=True,
+        required=False
     )
     
     items = OrderItemSerializer(many=True, required=False)
@@ -77,7 +78,12 @@ class ProductionOrderSerializer(serializers.ModelSerializer):
         fields = ['id', 'customer_name', 'status', 'items', 'operario', 'fecha_inicio', 'observaciones_produccion']
 
     def get_customer_name(self, obj):
-        return f"{obj.customer.user.first_name} {obj.customer.user.last_name}".strip() or obj.customer.user.username
+        if obj.customer and obj.customer.user:
+            name = f"{obj.customer.user.first_name} {obj.customer.user.last_name}".strip()
+            return name or obj.customer.user.username
+        elif obj.customer:
+            return getattr(obj.customer, 'full_name', 'Cliente sin nombre')
+        return "Desconocido"
 
     def get_status(self, obj):
         mapping = {
