@@ -41,6 +41,7 @@ class PedidoSerializer(serializers.ModelSerializer):
             'additional_info',
             'items'
         ]
+        read_only_fields = ['status']
 
     def create(self, validated_data):
         items_data = validated_data.pop('items', [])

@@ -10,6 +10,21 @@ class PedidoViewSet(viewsets.ModelViewSet):
     queryset = Order.objects.all() 
     serializer_class = PedidoSerializer
 
+    @action(detail=True, methods=['post'])
+    def marcar_enviado(self, request, pk=None):
+        order = self.get_object()
+        
+        if order.status != 'finished':
+            return Response(
+                {"error": "El pedido debe estar en estado 'Terminado' para poder ser enviado."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+            
+        order.status = 'sent'
+        order.save()
+        
+        return Response({"status": "success", "message": "El pedido ha sido marcado como enviado."})
+
 class ProductionViewSet(viewsets.ModelViewSet):
     serializer_class = ProductionOrderSerializer
 
