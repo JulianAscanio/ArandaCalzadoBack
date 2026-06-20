@@ -26,7 +26,7 @@
         "is_superuser": false,
         "username": "jdoe",
         "first_name": "Juan",
-        "last_name": "Pérez",
+        "last_name": "PÃ©rez",
         "email": "juan@example.com",
         "is_staff": false,
         "is_active": true,
@@ -43,8 +43,8 @@
         "last_login": null,
         "is_superuser": false,
         "username": "msmith",
-        "first_name": "María",
-        "last_name": "Gómez",
+        "first_name": "MarÃ­a",
+        "last_name": "GÃ³mez",
         "email": "maria@example.com",
         "is_staff": false,
         "is_active": true,
@@ -62,7 +62,7 @@
         "is_superuser": false,
         "username": "cgarcia",
         "first_name": "Carlos",
-        "last_name": "García",
+        "last_name": "GarcÃ­a",
         "email": "carlos@example.com",
         "is_staff": false,
         "is_active": true,
@@ -79,7 +79,7 @@
         "full_name": "",
         "phone": "3001234567",
         "address": "Calle Falsa 123",
-        "city": "Bogotá",
+        "city": "BogotÃ¡",
         "email": null
     }
 },
@@ -91,7 +91,7 @@
         "full_name": "",
         "phone": "3109876543",
         "address": "Carrera 45 # 12-34",
-        "city": "Medellín",
+        "city": "MedellÃ­n",
         "email": null
     }
 },
@@ -115,7 +115,7 @@
         "full_name": "Bayron Vargas",
         "phone": "3121111111",
         "address": "av 2 #2-23",
-        "city": "Cúcuta",
+        "city": "CÃºcuta",
         "email": "ejemplo1@gmail.com"
     }
 },
@@ -123,12 +123,12 @@
     "model": "inventario.material",
     "pk": 1,
     "fields": {
-        "name": "Cuero natural café",
+        "name": "Cuero natural cafÃ©",
         "category": "Cuero",
         "stock": 325.0,
         "min_stock": 100.0,
         "max_stock": 500.0,
-        "unit": "dm²",
+        "unit": "dmÂ²",
         "last_entry": "2026-06-19"
     }
 },
@@ -136,12 +136,12 @@
     "model": "inventario.material",
     "pk": 2,
     "fields": {
-        "name": "Cuero sintético negro",
+        "name": "Cuero sintÃ©tico negro",
         "category": "Cuero",
         "stock": 85.0,
         "min_stock": 120.0,
         "max_stock": 300.0,
-        "unit": "dm²",
+        "unit": "dmÂ²",
         "last_entry": "2026-04-26"
     }
 },
@@ -149,7 +149,7 @@
     "model": "inventario.material",
     "pk": 3,
     "fields": {
-        "name": "Suelas de caucho N°36",
+        "name": "Suelas de caucho NÂ°36",
         "category": "Suelas",
         "stock": 45.0,
         "min_stock": 50.0,
@@ -191,7 +191,7 @@
         "name": "Baletas destalonadas con lazo",
         "reference": "REF 6504",
         "heel_height": "3.5 cm",
-        "description": "Baletas destalonadas con lazo grande al frente (Negro, Blanco, Palo de rosa, Verde, Marrón, Rosado, Beige)",
+        "description": "Baletas destalonadas con lazo grande al frente (Negro, Blanco, Palo de rosa, Verde, MarrÃ³n, Rosado, Beige)",
         "price": "150000.00",
         "material": 1,
         "available_stock": 11,
@@ -202,10 +202,10 @@
     "model": "inventario.product",
     "pk": 6,
     "fields": {
-        "name": "Tacón bajo cerrado puntudo",
+        "name": "TacÃ³n bajo cerrado puntudo",
         "reference": "REF MP504",
         "heel_height": "3.5 cm",
-        "description": "Tacón bajo cerrado puntudo, destalonado (Blanco, Dorado, Animal print/Lince, Marrón, Negro)",
+        "description": "TacÃ³n bajo cerrado puntudo, destalonado (Blanco, Dorado, Animal print/Lince, MarrÃ³n, Negro)",
         "price": "120000.00",
         "material": 1,
         "available_stock": 13,
@@ -216,10 +216,10 @@
     "model": "inventario.product",
     "pk": 7,
     "fields": {
-        "name": "Tacón grueso destalonado Denim",
+        "name": "TacÃ³n grueso destalonado Denim",
         "reference": "REF 65004 (Denim)",
         "heel_height": "5.5 cm",
-        "description": "Tacón grueso denim destalonado en tela tipo Jean (Azul claro y Azul oscuro)",
+        "description": "TacÃ³n grueso denim destalonado en tela tipo Jean (Azul claro y Azul oscuro)",
         "price": "180000.00",
         "material": 1,
         "available_stock": 10,
@@ -230,10 +230,10 @@
     "model": "inventario.product",
     "pk": 8,
     "fields": {
-        "name": "Tacón grueso cerrado con lazo",
+        "name": "TacÃ³n grueso cerrado con lazo",
         "reference": "REF 65004 (Lazo)",
         "heel_height": "5.5 cm",
-        "description": "Tacón grueso cerrado con lazo grande al frente (Verde, Fucsia)",
+        "description": "TacÃ³n grueso cerrado con lazo grande al frente (Verde, Fucsia)",
         "price": "180000.00",
         "material": 1,
         "available_stock": 10,
@@ -244,10 +244,10 @@
     "model": "inventario.product",
     "pk": 9,
     "fields": {
-        "name": "Tacón grueso cerrado puntudo",
-        "reference": "REF 65004 (Básico)",
+        "name": "TacÃ³n grueso cerrado puntudo",
+        "reference": "REF 65004 (BÃ¡sico)",
         "heel_height": "5.5 cm",
-        "description": "Tacón grueso cerrado puntudo, destalonado (Marrón, Blanco, Lila, Azul rey)",
+        "description": "TacÃ³n grueso cerrado puntudo, destalonado (MarrÃ³n, Blanco, Lila, Azul rey)",
         "price": "160000.00",
         "material": 1,
         "available_stock": 10,
@@ -258,10 +258,10 @@
     "model": "inventario.product",
     "pk": 10,
     "fields": {
-        "name": "Tacón bajo destalonado Nobuk",
+        "name": "TacÃ³n bajo destalonado Nobuk",
         "reference": "REF 65004 (Nobuk)",
         "heel_height": "3.5 cm",
-        "description": "Tacón bajo destalonado en textura mate/nobuk (Rosa, Negro, Verde, Negro Nobuk)",
+        "description": "TacÃ³n bajo destalonado en textura mate/nobuk (Rosa, Negro, Verde, Negro Nobuk)",
         "price": "140000.00",
         "material": 1,
         "available_stock": 10,
@@ -272,10 +272,10 @@
     "model": "inventario.product",
     "pk": 11,
     "fields": {
-        "name": "Tacón grueso cerrado con cadena",
+        "name": "TacÃ³n grueso cerrado con cadena",
         "reference": "REF 5985H",
         "heel_height": "5.5 cm",
-        "description": "Tacón grueso cerrado con detalle de cadena dorada al frente (Negro, Rojo, Blanco)",
+        "description": "TacÃ³n grueso cerrado con detalle de cadena dorada al frente (Negro, Rojo, Blanco)",
         "price": "170000.00",
         "material": 1,
         "available_stock": 10,
@@ -286,10 +286,10 @@
     "model": "inventario.product",
     "pk": 12,
     "fields": {
-        "name": "Tacón bajo cerrado con correa",
+        "name": "TacÃ³n bajo cerrado con correa",
         "reference": "REF T734P",
         "heel_height": "3.5 cm",
-        "description": "Tacón bajo cerrado con correa ajustable al tobillo (Bicolor Blanco/Negro, Bicolor Beige/Marrón, Negro)",
+        "description": "TacÃ³n bajo cerrado con correa ajustable al tobillo (Bicolor Blanco/Negro, Bicolor Beige/MarrÃ³n, Negro)",
         "price": "130000.00",
         "material": 1,
         "available_stock": 10,
@@ -300,10 +300,10 @@
     "model": "inventario.product",
     "pk": 13,
     "fields": {
-        "name": "Tacón grueso cerrado con correa",
+        "name": "TacÃ³n grueso cerrado con correa",
         "reference": "REF 336",
         "heel_height": "5.5 cm",
-        "description": "Tacón grueso cerrado con correa ajustable al tobillo (Verde, Marrón, Naranja, Negro, Fucsia)",
+        "description": "TacÃ³n grueso cerrado con correa ajustable al tobillo (Verde, MarrÃ³n, Naranja, Negro, Fucsia)",
         "price": "160000.00",
         "material": 1,
         "available_stock": 10,
@@ -314,10 +314,10 @@
     "model": "inventario.product",
     "pk": 14,
     "fields": {
-        "name": "Sandalia de tacón grueso",
+        "name": "Sandalia de tacÃ³n grueso",
         "reference": "REF 101",
         "heel_height": "5.5 cm",
-        "description": "Sandalia de tacón grueso con punta abierta y correa al tobillo (Negro, Blanco, Dorado, Fucsia, Verde limón)",
+        "description": "Sandalia de tacÃ³n grueso con punta abierta y correa al tobillo (Negro, Blanco, Dorado, Fucsia, Verde limÃ³n)",
         "price": "140000.00",
         "material": 1,
         "available_stock": 10,
@@ -328,10 +328,10 @@
     "model": "inventario.product",
     "pk": 15,
     "fields": {
-        "name": "Tacón grueso cerrado clásico",
+        "name": "TacÃ³n grueso cerrado clÃ¡sico",
         "reference": "REF 5985 LINCE",
         "heel_height": "5.5 cm",
-        "description": "Tacón grueso cerrado clásico tipo pump (Negro, Animal print/Lince, Marrón, Verde oliva)",
+        "description": "TacÃ³n grueso cerrado clÃ¡sico tipo pump (Negro, Animal print/Lince, MarrÃ³n, Verde oliva)",
         "price": "150000.00",
         "material": 1,
         "available_stock": 10,
@@ -345,7 +345,7 @@
         "name": "Sandalia destalonada cristal",
         "reference": "REF MP550",
         "heel_height": "7.5 cm",
-        "description": "Sandalia destalonada con tacón transparente de cristal y lazo al frente (Animal print, Negro, Naranja)",
+        "description": "Sandalia destalonada con tacÃ³n transparente de cristal y lazo al frente (Animal print, Negro, Naranja)",
         "price": "190000.00",
         "material": 1,
         "available_stock": 10,
@@ -359,7 +359,7 @@
         "name": "Sandalia de plataforma alta",
         "reference": "REF MP551",
         "heel_height": "15 cm",
-        "description": "Sandalia de plataforma alta con tacón cubano grueso y correa (Fucsia, Blanco, Negro, Verde)",
+        "description": "Sandalia de plataforma alta con tacÃ³n cubano grueso y correa (Fucsia, Blanco, Negro, Verde)",
         "price": "210000.00",
         "material": 1,
         "available_stock": 10,
@@ -370,10 +370,10 @@
     "model": "inventario.product",
     "pk": 18,
     "fields": {
-        "name": "Sandalia una tira tacón cubano",
+        "name": "Sandalia una tira tacÃ³n cubano",
         "reference": "REF MP552",
         "heel_height": "5.5 cm",
-        "description": "Sandalia de una sola tira frontal con tacón cubano y correa al tobillo (Rojo, Negro, Blanco, Marrón, Dorado)",
+        "description": "Sandalia de una sola tira frontal con tacÃ³n cubano y correa al tobillo (Rojo, Negro, Blanco, MarrÃ³n, Dorado)",
         "price": "150000.00",
         "material": 1,
         "available_stock": 10,
@@ -384,10 +384,10 @@
     "model": "inventario.product",
     "pk": 19,
     "fields": {
-        "name": "Sandalia una tira tacón bajo",
+        "name": "Sandalia una tira tacÃ³n bajo",
         "reference": "REF MP553",
         "heel_height": "3.5 cm",
-        "description": "Sandalia de una sola tira frontal con tacón bajo y correa al tobillo (Fucsia, Negro, Verde, Blanco, Azul rey)",
+        "description": "Sandalia de una sola tira frontal con tacÃ³n bajo y correa al tobillo (Fucsia, Negro, Verde, Blanco, Azul rey)",
         "price": "130000.00",
         "material": 1,
         "available_stock": 10,
@@ -400,9 +400,9 @@
     "fields": {
         "material": 6,
         "material_name": "cuero sintetico blanco",
-        "movement_type": "creación",
+        "movement_type": "creaciÃ³n",
         "quantity": 200.0,
-        "reason": "Creación de material",
+        "reason": "CreaciÃ³n de material",
         "date": "2026-05-23T16:47:30.969Z"
     }
 },
@@ -423,7 +423,7 @@
     "pk": 3,
     "fields": {
         "material": 1,
-        "material_name": "Cuero natural café",
+        "material_name": "Cuero natural cafÃ©",
         "movement_type": "entrada",
         "quantity": 10.0,
         "reason": "Test",
@@ -435,7 +435,7 @@
     "pk": 4,
     "fields": {
         "material": 1,
-        "material_name": "Cuero natural café",
+        "material_name": "Cuero natural cafÃ©",
         "movement_type": "salida",
         "quantity": 5.0,
         "reason": "Prueba entrada",
@@ -459,7 +459,7 @@
     "pk": 6,
     "fields": {
         "material": 1,
-        "material_name": "Cuero natural café",
+        "material_name": "Cuero natural cafÃ©",
         "movement_type": "salida",
         "quantity": 10.0,
         "reason": "Retiro de material",
@@ -474,7 +474,7 @@
         "material_name": "Pegante especial",
         "movement_type": "salida",
         "quantity": 5.0,
-        "reason": "Consumo producción orden #1",
+        "reason": "Consumo producciÃ³n orden #1",
         "date": "2026-05-29T17:39:47.807Z"
     }
 },
@@ -483,10 +483,10 @@
     "pk": 8,
     "fields": {
         "material": 1,
-        "material_name": "Cuero natural café",
+        "material_name": "Cuero natural cafÃ©",
         "movement_type": "salida",
         "quantity": 10.0,
-        "reason": "Consumo producción orden #8",
+        "reason": "Consumo producciÃ³n orden #8",
         "date": "2026-06-20T00:52:50.403Z"
     }
 },
@@ -498,7 +498,7 @@
         "material_name": "Pegante especial",
         "movement_type": "salida",
         "quantity": 1.0,
-        "reason": "Consumo producción orden #9",
+        "reason": "Consumo producciÃ³n orden #9",
         "date": "2026-06-20T00:53:13.844Z"
     }
 },
